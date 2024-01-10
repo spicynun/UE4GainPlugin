@@ -13,7 +13,7 @@ namespace NickTsakirAudioLibrary
 		for (int SampleIndex = 0; SampleIndex < NumSamples; ++SampleIndex)
 		{
 			//Smoothing formula to prevent clicks
-			//smoothedGain = smoothedGain - 0.005f * (smoothedGain - Volume);
+			smoothedGain = smoothedGain - 0.005f * (smoothedGain - Volume);
 			OutputBuffer[SampleIndex] = Volume * InputBuffer[SampleIndex];
 		}
 	}
@@ -23,7 +23,7 @@ namespace NickTsakirAudioLibrary
 		for (int SampleIndex = 0; SampleIndex < NumSamples; ++SampleIndex)
 		{
 			//Smoothing formula to prevent clicks
-			//smoothedGain = smoothedGain - 0.005f * (smoothedGain - Volume);
+			smoothedGain = smoothedGain - 0.005f * (smoothedGain - Volume);
 
 			InOutBuffer[SampleIndex] *= Volume;
 		}
